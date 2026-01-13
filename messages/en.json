@@ -67,5 +67,18 @@
 		"feature2_desc": "Competitive micro-credit rates that help small businesses scale without the high cost of traditional debt.",
 		"feature3_title": "Paperless Process",
 		"feature3_desc": "e-KYC and digital verification mean no more long queues or complicated paperwork at the branch."
+	},
+	"AppShowcase": {
+		"badge": "Version 2.0 Out Now",
+		"title": "Your Pocket Bank in Kannada",
+		"description": "Track your daily Pigmy deposits, check interest statements, and apply for loans instantly on the go.",
+		"scanText": "Scan to Track",
+		"scanSubtext": "Easy Daily Deposit Tracking",
+		"mockup": {
+			"savings": "Total Savings",
+			"deposit": "Deposit",
+			"passbook": "Passbook",
+			"goal": "Monthly Pigmy Goal"
+		}
 	}
 }
