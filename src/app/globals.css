@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+@theme {
+	--color-primary: #800000;
+	--color-secondary: #064e3b;
+	--color-brand-white: #f9fafb;
+	--color-brand-black: #111827;
+
+	--font-jakarta: var(--font-plus-jakarta);
+	--font-anek: var(--font-anek);
+
+	--spacing-header: 3rem;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	--background: #f9fafb;
+	--foreground: #111827;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background-color: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-plus-jakarta), var(--font-anek), sans-serif;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+html[lang="kn"] body {
+	font-family: var(--font-anek), var(--font-plus-jakarta), sans-serif !important;
+}
+
+@layer utilities {
+	.hampi-line-art {
+		background-image: url("data:image/svg+xml,%3Csvg width='800' height='600' viewBox='0 0 800 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 500 L150 500 L150 480 L200 480 L200 500 L650 500 L650 480 L700 480 L700 500 L750 500 M250 480 L250 350 L550 350 L550 480 M300 350 L300 250 L500 250 L500 350 M350 250 L400 150 L450 250' stroke='%23064E3B' stroke-width='0.5' fill='none' opacity='0.15'/%3E%3Ccircle cx='200' cy='520' r='30' stroke='%23064E3B' stroke-width='0.5' fill='none' opacity='0.15'/%3E%3Ccircle cx='600' cy='520' r='30' stroke='%23064E3B' stroke-width='0.5' fill='none' opacity='0.15'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: center right;
+		background-size: contain;
+	}
+
+	.floating-card {
+		background-color: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(12px);
+		border: 1px solid #f1f5f9;
+		border-radius: 1rem;
+		padding: 1rem;
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+	}
 }

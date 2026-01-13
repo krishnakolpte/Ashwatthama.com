@@ -1,0 +1,60 @@
+{
+	"Navbar": {
+		"services": "Services",
+		"impact": "Our Impact",
+		"contact": "Contact",
+		"login": "Login",
+		"lang_toggle": "ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ"
+	},
+	"Hero": {
+		"badge": "Global Standards • Local Roots",
+		"titleLine1": "Modern Banking",
+		"titleLine2": "for the Heart",
+		"titleLine3": "of India.",
+		"description": "Ashwatthama Microfinance combines cutting-edge fintech with a deep cultural understanding of Channarayapatna’s community.",
+		"ctaStart": "Get Started",
+		"ctaWork": "How it works",
+		"stat1_val": "50+",
+		"stat1_label": "Local Branches",
+		"stat2_val": "1 Lakh+",
+		"stat2_label": "Daily Deposits",
+		"stat3_val": "100%",
+		"stat3_label": "Digital Process",
+		"cardApproval_label": "Fast Approval",
+		"cardApproval_value": "Paperless KYC",
+		"cardSavings_label": "Pigmy Goal",
+		"cardSavings_value": "₹45,280 Saved",
+		"imageAlt": "Local family with passbook"
+	},
+	"Footer": {
+		"brandDesc": "Empowering rural aspirations with ethical banking and modern technology. RBI Registered NBFC.",
+		"productHeading": "Products",
+		"p1": "Micro Gold Loans",
+		"p2": "Daily Pigmy Deposits",
+		"p3": "MSME Business Credit",
+		"p4": "Group Savings",
+		"companyHeading": "Company",
+		"c1": "About Us",
+		"c2": "Impact Report 2024",
+		"c3": "Careers",
+		"c4": "Press Kit",
+		"trustHeading": "Trust",
+		"nbfcLabel": "Registered NBFC",
+		"partnerLabel": "Digital Inclusion Partner",
+		"copyright": "© 2026 Ashwatthama Microfinance. All rights reserved.",
+		"settlementLabel": "Settlement Partners:"
+	},
+	"Opportunities": {
+		"badge": "Hot Deals",
+		"title": "Financial Opportunities",
+		"card1_title": "9.5% Fixed Rates",
+		"card1_desc": "Maximize your savings with our highest interest bracket for FD above ₹1 Lakh.",
+		"card1_btn": "Details",
+		"card2_title": "Special Loan Mela",
+		"card2_desc": "Join the 2026 Gold Loan mela in Hassan. On-the-spot appraisals and disbursal.",
+		"card2_btn": "View Venues",
+		"card3_title": "Pigmy Bonus Plan",
+		"card3_desc": "Consistency pays. Get 1% extra annual returns on daily collection accounts.",
+		"card3_btn": "Join Plan"
+	}
+}
