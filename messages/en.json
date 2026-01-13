@@ -56,5 +56,16 @@
 		"card3_title": "Pigmy Bonus Plan",
 		"card3_desc": "Consistency pays. Get 1% extra annual returns on daily collection accounts.",
 		"card3_btn": "Join Plan"
+	},
+	"WhyUs": {
+		"badge": "The Ashwatthama Edge",
+		"title": "Built Differently for Our Community",
+		"subtitle": "We bridge the gap between rural aspirations and professional banking standards.",
+		"feature1_title": "Doorstep Service",
+		"feature1_desc": "Banking at your kitchen table. Our authorized agents collect deposits and process loans at your home.",
+		"feature2_title": "Unbeatable Rates",
+		"feature2_desc": "Competitive micro-credit rates that help small businesses scale without the high cost of traditional debt.",
+		"feature3_title": "Paperless Process",
+		"feature3_desc": "e-KYC and digital verification mean no more long queues or complicated paperwork at the branch."
 	}
 }
