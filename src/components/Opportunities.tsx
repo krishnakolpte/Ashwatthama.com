@@ -35,41 +35,51 @@ export default async function Opportunities() {
 	];
 
 	return (
-		<section className="py-24 bg-white relative">
-			<div className="max-w-7xl mx-auto px-6 lg:px-10">
-				<div className="flex items-end justify-between mb-12">
-					<div>
-						<span className="text-primary font-bold tracking-widest uppercase text-xs block mb-3">
+		<section className="py-16 md:py-24 bg-white relative overflow-hidden">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+				{/* Header: Centered on mobile, Left-aligned on desktop */}
+				<div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-12 text-center md:text-left">
+					<div className="mb-6 md:mb-0">
+						<span className="text-primary font-bold tracking-widest uppercase text-[10px] sm:text-xs block mb-3">
 							{t("badge")}
 						</span>
-						<h2 className="text-4xl font-black text-brand-black tracking-tight font-kannada">
+						<h2 className="text-3xl sm:text-4xl font-black text-brand-black tracking-tight font-kannada">
 							{t("title")}
 						</h2>
 					</div>
-					<div className="hidden md:flex gap-2">
+					{/* Decorative lines: Hidden on mobile to save space */}
+					<div className="hidden md:flex gap-2 mb-2">
 						<div className="h-1 w-12 bg-primary rounded-full" />
 						<div className="h-1 w-6 bg-slate-100 rounded-full" />
 					</div>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{/* Grid: 1 column on mobile, 2 on tablet, 3 on desktop */}
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 					{cards.map((card, index) => (
 						<div
 							key={index}
-							className={`group relative overflow-hidden rounded-[2.5rem] bg-slate-50 p-10 transition-all ${card.colorClass} hover:shadow-2xl ${card.shadowClass}`}
+							className={`group relative flex flex-col overflow-hidden rounded-4xl md:rounded-[2.5rem] bg-slate-50 p-8 md:p-10 transition-all ${card.colorClass} hover:shadow-2xl ${card.shadowClass}`}
 						>
 							<div
-								className={`mb-10 ${card.iconClass} group-hover:text-white transition-colors`}
+								className={`mb-6 md:mb-10 ${card.iconClass} group-hover:text-white transition-colors`}
 							>
-								<card.icon size={48} strokeWidth={2.5} />
+								{/* Adjusted icon size for mobile responsiveness */}
+								<card.icon
+									className="size-10 md:size-12"
+									strokeWidth={2.5}
+								/>
 							</div>
-							<h3 className="text-2xl font-black mb-3 group-hover:text-white transition-colors font-kannada">
+
+							<h3 className="text-xl md:text-2xl font-black mb-3 group-hover:text-white transition-colors font-kannada">
 								{card.title}
 							</h3>
-							<p className="text-slate-500 group-hover:text-white/80 transition-colors mb-8 leading-relaxed font-kannada">
+
+							<p className="text-sm md:text-base text-slate-500 group-hover:text-white/80 transition-colors mb-8 leading-relaxed font-kannada grow">
 								{card.desc}
 							</p>
-							<button className="w-full py-4 bg-white text-brand-black font-bold rounded-2xl shadow-sm border border-slate-100 group-hover:border-transparent cursor-pointer active:scale-95 transition-transform font-kannada">
+
+							<button className="w-full py-3.5 md:py-4 bg-white text-brand-black font-bold rounded-xl md:rounded-2xl shadow-sm border border-slate-100 group-hover:border-transparent cursor-pointer active:scale-95 transition-all font-kannada text-sm md:text-base">
 								{card.btn}
 							</button>
 						</div>
