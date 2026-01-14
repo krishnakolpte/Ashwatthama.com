@@ -3,6 +3,7 @@ import { Link } from "@/i18n/routing";
 import { Landmark } from "lucide-react";
 import NavbarClient from "./NavbarClient";
 import type { NavbarTranslations, SupportedLocale } from "@/types/navbar";
+import Image from "next/image";
 
 interface NavbarProps {
 	locale: SupportedLocale;
@@ -26,8 +27,16 @@ export default async function Navbar({ locale }: NavbarProps) {
 					href="/"
 					className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
 				>
-					<div className="size-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
-						<Landmark size={24} />
+					<div className="relative h-10 w-40 group cursor-pointer">
+						<Image
+							alt="Ashwatthama Microfinance Logo"
+							src="/logo.png"
+							fill
+							// 'contain' ensures the logo isn't cropped or stretched
+							className="object-contain transition-transform duration-300 group-hover:scale-105"
+							sizes="(max-width: 768px) 160px, 200px"
+							priority
+						/>
 					</div>
 					<div>
 						<h2 className="text-brand-black text-xl font-extrabold leading-tight tracking-tight">
