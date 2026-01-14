@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Landmark, Share2, Globe, ShieldCheck, Cpu } from "lucide-react"; // Replacing material symbols for performance
+import { Share2, Globe, ShieldCheck, Cpu } from "lucide-react"; // Replacing material symbols for performance
 import Link from "next/link";
 import Image from "next/image";
 
