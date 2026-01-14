@@ -14,20 +14,20 @@ export default async function Footer() {
 					<div className="col-span-1">
 						<Link
 							href="/"
-							className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
+							className="flex items-center gap-0.5 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
 						>
-							<div className="relative h-10 w-40 group cursor-pointer">
+							<div className="relative h-10 w-20 group cursor-pointer">
 								<Image
 									alt="Ashwatthama Microfinance Logo"
 									src="/logo.png"
 									fill
 									// 'contain' ensures the logo isn't cropped or stretched
 									className="object-contain transition-transform duration-300 group-hover:scale-105"
-									sizes="(max-width: 768px) 160px, 200px"
+									sizes="(max-width: 80px) 80px, 80px"
 									priority
 								/>
 							</div>
-							<div>
+							<div className="w-full">
 								<h2 className="text-brand-white text-xl font-extrabold leading-tight tracking-tight">
 									Ashwatthama
 								</h2>
