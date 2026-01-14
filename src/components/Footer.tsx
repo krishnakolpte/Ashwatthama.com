@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Landmark, Share2, Globe, ShieldCheck, Cpu } from "lucide-react"; // Replacing material symbols for performance
+import Link from "next/link";
 
 export default async function Footer() {
 	const t = await getTranslations("Footer");
@@ -10,15 +11,23 @@ export default async function Footer() {
 				<div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
 					{/* Brand Section */}
 					<div className="col-span-1">
-						<div className="flex items-center gap-3 mb-8">
-							<div className="size-10 bg-primary rounded-xl flex items-center justify-center text-white">
+						<Link
+							href="/"
+							className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
+						>
+							<div className="size-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
 								<Landmark size={24} />
 							</div>
-							<h2 className="text-2xl font-black tracking-tight">
-								Ashwatthama
-							</h2>
-						</div>
-						<p className="text-white/50 leading-relaxed font-medium mb-8 font-kannada">
+							<div>
+								<h2 className="text-brand-white text-xl font-extrabold leading-tight tracking-tight">
+									Ashwatthama
+								</h2>
+								<p className="text-secondary text-[10px] font-black uppercase tracking-[0.2em] leading-none">
+									Microfinance
+								</p>
+							</div>
+						</Link>
+						<p className="text-white/50 leading-relaxed font-medium mb-8 font-kannada mt-3">
 							{t("brandDesc")}
 						</p>
 						<div className="flex gap-4">

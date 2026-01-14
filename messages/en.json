@@ -80,5 +80,29 @@
 			"passbook": "Passbook",
 			"goal": "Monthly Pigmy Goal"
 		}
+	},
+	"Dashboard": {
+		"stats_title": "Our Achievement Statistics",
+		"services_title": "Our Financial Solutions for You",
+		"features_title": "Why Trust Us?",
+		"stat1": "Happy Customers",
+		"stat2": "Group Loans",
+		"stat3": "Fixed Deposits (FD)",
+		"stat4": "Pigmy Members",
+		"service1": "Savings Account",
+		"service2": "Fixed Deposit (FD)",
+		"service3": "Recurring Deposit (RD)",
+		"service4": "Pigmy Deposit",
+		"service5": "All Types of Loans",
+		"service6": "Insurance Policies",
+		"feature_list": [
+			"Low Interest Rate",
+			"Top-up Facility",
+			"Loan Transfer (Take Over)",
+			"Easy Repayment",
+			"Doorstep Service",
+			"Online Facilities",
+			"24/7 Support"
+		]
 	}
 }
