@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Landmark, Share2, Globe, ShieldCheck, Cpu } from "lucide-react"; // Replacing material symbols for performance
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function Footer() {
 	const t = await getTranslations("Footer");
@@ -15,8 +16,16 @@ export default async function Footer() {
 							href="/"
 							className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
 						>
-							<div className="size-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
-								<Landmark size={24} />
+							<div className="relative h-10 w-40 group cursor-pointer">
+								<Image
+									alt="Ashwatthama Microfinance Logo"
+									src="/logo.png"
+									fill
+									// 'contain' ensures the logo isn't cropped or stretched
+									className="object-contain transition-transform duration-300 group-hover:scale-105"
+									sizes="(max-width: 768px) 160px, 200px"
+									priority
+								/>
 							</div>
 							<div>
 								<h2 className="text-brand-white text-xl font-extrabold leading-tight tracking-tight">

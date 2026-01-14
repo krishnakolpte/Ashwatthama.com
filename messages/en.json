@@ -111,5 +111,18 @@
 		"awards_label": "National Awards",
 		"branches_label": "Active Branches",
 		"members_label": "Active Members"
+	},
+	"Community": {
+		"tag": "Community Hub",
+		"title": "Recent Events & Workshops",
+		"event1_tag": "Literacy Workshop",
+		"event1_title": "Digital Banking for Rural Women",
+		"event1_info": "October 12, 2023 • Hassan Center",
+		"event2_tag": "Community Meet",
+		"event2_title": "Farmer Credit Awareness Session",
+		"event2_info": "November 05, 2023 • Channarayapatna",
+		"event3_tag": "Expansion",
+		"event3_title": "Our 50th Milestone Branch Opening",
+		"event3_info": "December 20, 2023 • Arasikere"
 	}
 }
