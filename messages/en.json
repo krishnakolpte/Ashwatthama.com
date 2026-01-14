@@ -104,5 +104,12 @@
 			"Online Facilities",
 			"24/7 Support"
 		]
+	},
+	"Awards": {
+		"title": "Recognitions & Reach",
+		"subtitle": "Our commitment to excellence recognized at the national level.",
+		"awards_label": "National Awards",
+		"branches_label": "Active Branches",
+		"members_label": "Active Members"
 	}
 }

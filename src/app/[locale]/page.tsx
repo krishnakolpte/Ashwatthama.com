@@ -1,4 +1,5 @@
 import AppShowcase from "@/components/AppShowcase";
+import AwardsSection from "@/components/AwardsSection";
 import Hero from "@/components/Hero";
 import Opportunities from "@/components/Opportunities";
 import TrustDashboard from "@/components/TrustDashboard";
@@ -12,6 +13,7 @@ export default function HomePage() {
 			<Opportunities />
 			<WhyUs />
 			<AppShowcase />
+			<AwardsSection />
 		</>
 	);
 }
