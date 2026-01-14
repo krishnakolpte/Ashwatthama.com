@@ -123,6 +123,17 @@
 		"event2_info": "November 05, 2023 • Channarayapatna",
 		"event3_tag": "Expansion",
 		"event3_title": "Our 50th Milestone Branch Opening",
-		"event3_info": "December 20, 2023 • Arasikere"
+		"event3_info": "December 20, 2023 • Arasikere",
+		"event4_tag": "Social",
+		"event4_title": "Community Outreach",
+		"event4_info": "Jan 10, 2026 • Sakleshpur"
+	},
+	"Testimonials": {
+		"tag": "Success Stories",
+		"main_quote": "Their support helped me expand my boutique when no one else would listen. The cultural understanding they bring to banking is truly unique.",
+		"main_author": "Smt. Lakshmi Devi",
+		"main_role": "Boutique Owner, Channarayapatna",
+		"card1_text": "The gold loan process took only 15 minutes. Truly the fastest service in Hassan district.",
+		"card2_text": "Doorstep pigmy collection has helped me save ₹500 every day without fail. Highly recommended."
 	}
 }

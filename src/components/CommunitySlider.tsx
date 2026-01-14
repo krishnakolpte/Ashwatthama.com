@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { useTranslations } from "next-intl";
@@ -9,52 +9,68 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 
+interface EventItem {
+	id: number;
+	tag: string;
+	title: string;
+	info: string;
+	img: string;
+	color: string;
+	dot: string;
+}
+
 export default function CommunitySlider() {
 	const t = useTranslations("Community");
 
-	const events = [
-		{
-			id: 1,
-			tag: t("event1_tag"),
-			title: t("event1_title"),
-			info: t("event1_info"),
-			img: "/event1.png",
-			color: "text-primary",
-			dot: "bg-primary",
-		},
-		{
-			id: 2,
-			tag: t("event2_tag"),
-			title: t("event2_title"),
-			info: t("event2_info"),
-			img: "/event1.png",
-			color: "text-secondary",
-			dot: "bg-secondary",
-		},
-		{
-			id: 3,
-			tag: t("event3_tag"),
-			title: t("event3_title"),
-			info: t("event3_info"),
-			img: "/event1.png",
-			color: "text-brand-black",
-			dot: "bg-brand-black",
-		},
-		{
-			id: 4,
-			tag: t("event1_tag"),
-			title: "Community Outreach",
-			info: "Jan 10, 2024",
-			img: "/event1.png",
-			color: "text-primary",
-			dot: "bg-primary",
-		},
-	];
+	const displayEvents = useMemo(() => {
+		const baseEvents: EventItem[] = [
+			{
+				id: 1,
+				tag: t("event1_tag"),
+				title: t("event1_title"),
+				info: t("event1_info"),
+				img: "/event1.png",
+				color: "text-primary",
+				dot: "bg-primary",
+			},
+			{
+				id: 2,
+				tag: t("event2_tag"),
+				title: t("event2_title"),
+				info: t("event2_info"),
+				img: "/u2.webp",
+				color: "text-secondary",
+				dot: "bg-secondary",
+			},
+			{
+				id: 3,
+				tag: t("event3_tag"),
+				title: t("event3_title"),
+				info: t("event3_info"),
+				img: "/u3.webp",
+				color: "text-brand-black",
+				dot: "bg-brand-black",
+			},
+			{
+				id: 4,
+				tag: t("event4_tag"),
+				title: t("event4_title"),
+				info: t("event4_info"),
+				img: "/u1.webp",
+				color: "text-primary",
+				dot: "bg-primary",
+			},
+		];
+
+		// Duplicate slides if count is low to satisfy Swiper Loop requirements
+		return baseEvents.length < 8
+			? [...baseEvents, ...baseEvents]
+			: baseEvents;
+	}, [t]); // Only re-runs if translations change
 
 	return (
 		<section className="py-16 md:py-24 bg-white overflow-hidden">
 			<div className="max-w-7xl mx-auto px-6 lg:px-10">
-				{/* Responsive Header */}
 				<div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
 					<div>
 						<span className="text-primary font-bold tracking-widest uppercase text-xs block mb-3 font-kannada">
@@ -66,55 +82,45 @@ export default function CommunitySlider() {
 					</div>
 
 					<div className="flex gap-3">
-						<button className="prev-btn size-12 md:size-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm active:scale-95">
+						<button className="prev-btn size-12 md:size-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm active:scale-95 cursor-pointer">
 							<ArrowLeft size={22} />
 						</button>
-						<button className="next-btn size-12 md:size-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-lg hover:shadow-primary/30 transition-all active:scale-95">
+						<button className="next-btn size-12 md:size-14 rounded-2xl bg-primary text-white flex items-center justify-center shadow-lg hover:shadow-primary/30 transition-all active:scale-95 cursor-pointer">
 							<ArrowRight size={22} />
 						</button>
 					</div>
 				</div>
 
-				{/* Centered Swiper Configuration */}
 				<Swiper
 					modules={[Navigation, Autoplay]}
 					spaceBetween={20}
-					slidesPerView={1.2} // Mobile: shows center slide + peeks of sides
+					slidesPerView={1.2}
 					centeredSlides={true}
 					loop={true}
 					autoplay={{ delay: 4000, disableOnInteraction: false }}
-					navigation={{
-						prevEl: ".prev-btn",
-						nextEl: ".next-btn",
-					}}
+					navigation={{ prevEl: ".prev-btn", nextEl: ".next-btn" }}
 					breakpoints={{
-						// Tablet
-						640: {
-							slidesPerView: 1.8,
-							spaceBetween: 24,
-						},
-						// Desktop
+						640: { slidesPerView: 1.8, spaceBetween: 24 },
 						1024: {
 							slidesPerView: 3,
 							spaceBetween: 30,
-							centeredSlides: false, // Standard 3-column grid on large screens
+							centeredSlides: false,
 						},
 					}}
 					className="overflow-visible"
 				>
-					{events.map((event) => (
-						<SwiperSlide key={event.id}>
+					{displayEvents.map((event, index) => (
+						<SwiperSlide key={`${event.id}-${index}`}>
 							<div className="group cursor-grab active:cursor-grabbing pb-4 flex flex-col">
 								<div className="relative h-64 md:h-72 rounded-4xl md:rounded-[2.5rem] overflow-hidden mb-6 shadow-sm border border-slate-100">
 									<Image
 										alt={event.title}
 										src={event.img}
 										fill
-										sizes="(max-width: 768px) 100vw, 33vw"
+										sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 										className="object-cover group-hover:scale-105 transition-transform duration-700"
 									/>
 								</div>
-
 								<div
 									className={`inline-flex items-center gap-2 ${event.color} font-bold text-xs uppercase mb-3 font-kannada`}
 								>
@@ -123,11 +129,9 @@ export default function CommunitySlider() {
 									></span>
 									{event.tag}
 								</div>
-
 								<h4 className="text-lg md:text-xl font-black mb-2 text-brand-black font-kannada line-clamp-2 min-h-14">
 									{event.title}
 								</h4>
-
 								<p className="text-sm md:text-base text-slate-500 font-medium font-kannada">
 									{event.info}
 								</p>
