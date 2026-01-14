@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
-import { Landmark } from "lucide-react";
 import NavbarClient from "./NavbarClient";
 import type { NavbarTranslations, SupportedLocale } from "@/types/navbar";
 import Image from "next/image";
