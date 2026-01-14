@@ -21,24 +21,24 @@ export default async function Navbar({ locale }: NavbarProps) {
 
 	return (
 		<header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-slate-100">
-			<div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
+			<div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between ">
 				{/* Semantic Brand Section */}
 				<Link
 					href="/"
-					className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
+					className="flex items-center gap-0.5 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
 				>
-					<div className="relative h-10 w-40 group cursor-pointer">
+					<div className="relative h-10 w-20 group cursor-pointer">
 						<Image
 							alt="Ashwatthama Microfinance Logo"
 							src="/logo.png"
 							fill
 							// 'contain' ensures the logo isn't cropped or stretched
 							className="object-contain transition-transform duration-300 group-hover:scale-105"
-							sizes="(max-width: 768px) 160px, 200px"
+							sizes="(max-width: 80px) 80px, 80px"
 							priority
 						/>
 					</div>
-					<div>
+					<div className="w-full">
 						<h2 className="text-brand-black text-xl font-extrabold leading-tight tracking-tight">
 							Ashwatthama
 						</h2>
@@ -68,7 +68,6 @@ export default async function Navbar({ locale }: NavbarProps) {
 					>
 						{translations.contact}
 					</Link>
-					<div className="h-4 w-px bg-slate-200" aria-hidden="true" />
 				</nav>
 
 				{/* Dynamic Client Interactions */}
