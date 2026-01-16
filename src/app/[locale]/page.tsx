@@ -1,11 +1,11 @@
-import AppShowcase from "@/components/AppShowcase";
-import AwardsSection from "@/components/AwardsSection";
-import CommunitySlider from "@/components/CommunitySlider";
-import Hero from "@/components/Hero";
-import Opportunities from "@/components/Opportunities";
-import SuccessStories from "@/components/SuccessStories";
-import TrustDashboard from "@/components/TrustDashboard";
-import WhyUs from "@/components/WhyUs";
+import AppShowcase from "@/components/home/AppShowcase";
+import AwardsSection from "@/components/home/AwardsSection";
+import CommunitySlider from "@/components/home/CommunitySlider";
+import Hero from "@/components/home/Hero";
+import Opportunities from "@/components/home/Opportunities";
+import SuccessStories from "@/components/home/SuccessStories";
+import TrustDashboard from "@/components/home/TrustDashboard";
+import WhyUs from "@/components/home/WhyUs";
 
 export default function HomePage() {
 	return (

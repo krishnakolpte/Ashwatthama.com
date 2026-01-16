@@ -12,7 +12,7 @@ export default async function Navbar({ locale }: NavbarProps) {
 	const t = await getTranslations("Navbar");
 
 	const translations: NavbarTranslations = {
-		services: t("services"),
+		loans: t("loans"),
 		impact: t("impact"),
 		contact: t("contact"),
 		login: t("login"),
@@ -24,7 +24,7 @@ export default async function Navbar({ locale }: NavbarProps) {
 				{/* Semantic Brand Section */}
 				<Link
 					href="/"
-					className="flex items-center gap-0.5 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg"
+					className="flex items-center gap-0.5 group outline-none rounded-lg"
 				>
 					<div className="relative h-10 w-20 group cursor-pointer">
 						<Image
@@ -50,10 +50,10 @@ export default async function Navbar({ locale }: NavbarProps) {
 				{/* Static Server-Rendered Nav Links */}
 				<nav className="hidden md:flex items-center gap-10">
 					<Link
-						href="#services"
+						href="/loans"
 						className="text-brand-black/70 text-sm font-semibold hover:text-primary transition-colors"
 					>
-						{translations.services}
+						{translations.loans}
 					</Link>
 					<Link
 						href="#impact"

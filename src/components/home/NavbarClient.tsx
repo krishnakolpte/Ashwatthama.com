@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu, X, Globe, User } from "lucide-react";
 import { useRouter, usePathname } from "@/i18n/routing";
 import type { NavbarTranslations, SupportedLocale } from "@/types/navbar";
+import Link from "next/link";
 
 interface NavbarClientProps {
 	locale: SupportedLocale;
@@ -38,11 +39,6 @@ export default function NavbarClient({
 						{locale === "en" ? "ಕನ್ನಡ" : "English"}
 					</span>
 				</button>
-
-				<button className="h-11 px-6 bg-brand-black text-white text-sm font-bold rounded-xl hover:bg-primary transition-all shadow-lg shadow-slate-200 flex items-center gap-2 active:scale-95">
-					<User size={16} />
-					{translations.login}
-				</button>
 			</div>
 
 			{/* Mobile Toggle */}
@@ -58,15 +54,18 @@ export default function NavbarClient({
 			{isOpen && (
 				<div className="fixed inset-0 top-18.25 bg-white z-50 md:hidden animate-in fade-in slide-in-from-top-5">
 					<nav className="flex flex-col p-8 gap-6 font-bold text-xl text-brand-black bg-white">
-						<a href="#services" onClick={() => setIsOpen(false)}>
-							{translations.services}
-						</a>
-						<a href="#impact" onClick={() => setIsOpen(false)}>
+						<Link
+							href={`/${locale}/loans`}
+							onClick={() => setIsOpen(false)}
+						>
+							{translations.loans}
+						</Link>
+						<Link href="#impact" onClick={() => setIsOpen(false)}>
 							{translations.impact}
-						</a>
-						<a href="#contact" onClick={() => setIsOpen(false)}>
+						</Link>
+						<Link href="#contact" onClick={() => setIsOpen(false)}>
 							{translations.contact}
-						</a>
+						</Link>
 						<button
 							onClick={handleLanguageToggle}
 							className="flex items-center gap-3 text-secondary pt-4 border-t border-slate-100"
