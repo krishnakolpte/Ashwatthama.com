@@ -1,0 +1,9 @@
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+
+export default async function GlobalNotFound() {
+	const cookieStore = await cookies();
+	const locale = cookieStore.get("NEXT_LOCALE")?.value || "en";
+
+	redirect(`/${locale}/not-found`);
+}

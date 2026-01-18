@@ -17,6 +17,7 @@ export default async function Hero() {
 					priority
 					className="object-contain object-bottom drop-shadow-2xl"
 					sizes="45vw"
+					fetchPriority="high"
 				/>
 
 				{/* Floating Card: Approval */}

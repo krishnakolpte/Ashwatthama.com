@@ -67,7 +67,10 @@ export default function NavbarClient({
 						<Link href="#impact" onClick={() => setIsOpen(false)}>
 							{translations.impact}
 						</Link>
-						<Link href="#contact" onClick={() => setIsOpen(false)}>
+						<Link
+							href={`/${locale}/contact`}
+							onClick={() => setIsOpen(false)}
+						>
 							{translations.contact}
 						</Link>
 						<button

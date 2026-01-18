@@ -6,6 +6,7 @@ import Opportunities from "@/components/home/Opportunities";
 import SuccessStories from "@/components/home/SuccessStories";
 import TrustDashboard from "@/components/home/TrustDashboard";
 import WhyUs from "@/components/home/WhyUs";
+import InvestmentSection from "@/components/loans/InvestmentSection";
 
 export default function HomePage() {
 	return (
@@ -18,6 +19,7 @@ export default function HomePage() {
 			<AwardsSection />
 			<CommunitySlider />
 			<SuccessStories />
+			<InvestmentSection />
 		</>
 	);
 }

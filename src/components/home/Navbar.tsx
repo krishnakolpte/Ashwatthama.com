@@ -62,7 +62,7 @@ export default async function Navbar({ locale }: NavbarProps) {
 						{translations.impact}
 					</Link>
 					<Link
-						href="#contact"
+						href="/contact"
 						className="text-brand-black/70 text-sm font-semibold hover:text-primary transition-colors"
 					>
 						{translations.contact}
