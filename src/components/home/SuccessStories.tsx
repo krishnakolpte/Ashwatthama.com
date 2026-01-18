@@ -32,7 +32,13 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 		</p>
 		<div className="flex items-center gap-4">
 			<div className="relative size-10 rounded-full overflow-hidden shrink-0 shadow-sm">
-				<Image alt={author} src={img} fill className="object-cover" />
+				<Image
+					alt={author}
+					src={img}
+					fill
+					sizes="(max-width: 768px) 80px, 100px"
+					className="object-cover"
+				/>
 			</div>
 			<p className="font-bold text-sm text-brand-black font-kannada">
 				{author}
@@ -68,6 +74,7 @@ export default function SuccessStories() {
 									<Image
 										alt="Lakshmi Devi"
 										fill
+										sizes="(max-width: 768px) 80px, 100px"
 										src="/u1.webp"
 										className="object-cover"
 									/>

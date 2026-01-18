@@ -5,7 +5,7 @@ export interface NavbarProps {
 }
 
 export interface NavbarTranslations {
-	services: string;
+	loans: string;
 	impact: string;
 	contact: string;
 	login: string;

@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Anek_Kannada } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/home/Navbar";
 import "../globals.css";
 import { SupportedLocale } from "@/types/navbar";
-import Footer from "@/components/Footer";
+import Footer from "@/components/home/Footer";
 
 const plusJakarta = Plus_Jakarta_Sans({
 	subsets: ["latin"],
@@ -51,6 +51,7 @@ export default async function LocaleLayout({
 			lang={locale}
 			className="scroll-smooth"
 			data-scroll-behavior="smooth"
+			suppressHydrationWarning
 		>
 			<body
 				className={`

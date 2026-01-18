@@ -1,10 +1,39 @@
 {
 	"Navbar": {
-		"services": "Services",
-		"impact": "Our Impact",
+		"loans": "Loans",
+		"investments": "Investments",
+		"impact": "Impact",
 		"contact": "Contact",
-		"login": "Login",
-		"lang_toggle": "ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ"
+		"login": "Member Portal",
+		"home_loans": "Home Loans",
+		"vehicle_loans": "Vehicle Loans",
+		"education_loans": "Education Loans",
+		"msme": "MSME Credit",
+		"agri": "Agricultural Finance",
+		"animal": "Animal Husbandry",
+		"fd": "Fixed Deposits",
+		"rd": "Recurring Deposits",
+		"pigmy": "Pigmy Savings"
+	},
+	"Header": {
+		"tagline": "Global Financial Portal",
+		"loans": "Loans",
+		"personal_banking": "Personal Banking",
+		"home_loans": "Home Loans",
+		"vehicle_loans": "Vehicle Loans",
+		"edu_loans": "Education Loans",
+		"business_agri": "Business & Agri",
+		"msme": "MSME Credit",
+		"agri_finance": "Agricultural Finance",
+		"animal_husbandry": "Animal Husbandry",
+		"investments": "Investments",
+		"fixed_income": "Fixed Income",
+		"fixed_deposits": "Fixed Deposits",
+		"recurring_deposits": "Recurring Deposits",
+		"pigmy": "Pigmy Savings",
+		"impact": "Impact",
+		"contact": "Contact",
+		"portal": "Member Portal"
 	},
 	"Hero": {
 		"badge": "Global Standards • Local Roots",
@@ -27,22 +56,15 @@
 		"imageAlt": "Local family with passbook"
 	},
 	"Footer": {
-		"brandDesc": "Empowering rural aspirations with ethical banking and modern technology. RBI Registered NBFC.",
-		"productHeading": "Products",
-		"p1": "Micro Gold Loans",
-		"p2": "Daily Pigmy Deposits",
-		"p3": "MSME Business Credit",
-		"p4": "Group Savings",
-		"companyHeading": "Company",
-		"c1": "About Us",
-		"c2": "Impact Report 2024",
-		"c3": "Careers",
-		"c4": "Press Kit",
-		"trustHeading": "Trust",
-		"nbfcLabel": "Registered NBFC",
-		"partnerLabel": "Digital Inclusion Partner",
-		"copyright": "© 2026 Ashwatthama Microfinance. All rights reserved.",
-		"settlementLabel": "Settlement Partners:"
+		"description": "Global standard financial services rooted in community trust. RBI Registered NBFC Partner, empowering local growth for half a decade.",
+		"newsletter_label": "Newsletter Signup",
+		"newsletter_placeholder": "Your email address",
+		"links_title": "Useful Links",
+		"products_title": "Products",
+		"contact_title": "Contact Branch",
+		"address_label": "Channarayapatna Head Office",
+		"address_text": "No. 12/4, Main Road, Near Old Bus Stand, Channarayapatna, Hassan, KA - 573116",
+		"rights": "© 2026 Ashwatthama Microfinance. Registered Office: Hassan, Karnataka, India."
 	},
 	"Opportunities": {
 		"badge": "Hot Deals",
@@ -135,5 +157,100 @@
 		"main_role": "Boutique Owner, Channarayapatna",
 		"card1_text": "The gold loan process took only 15 minutes. Truly the fastest service in Hassan district.",
 		"card2_text": "Doorstep pigmy collection has helped me save ₹500 every day without fail. Highly recommended."
+	},
+	"loan-section": {
+		"badge": "5-Year Anniversary Celebration",
+		"titlePart1": "5 Years of Empowering",
+		"titlePart2": "Communities",
+		"titlePart3": "Through Financial Inclusion.",
+		"description": "A global standard tech-fin gateway designed for the local ecosystem. Secure, transparent, and built on trust.",
+		"btnExplore": "Explore Loans",
+		"btnJoin": "Join as Member",
+		"kycLabel": "Verification",
+		"kycValue": "Paperless KYC",
+		"disbursalLabel": "Response",
+		"disbursalValue": "24hr Disbursal"
+	},
+	"about-section": {
+		"badge": "Our Heritage & Future",
+		"title": "Redefining Rural Finance with Modern Technology",
+		"description": "Ashwatthama Microfinance was born with a single mission: to provide world-class financial infrastructure to the underserved. Over the last five years, we have evolved from a local cooperative into a digital-first financial power-house, bridging the gap between traditional banking and the modern fintech era.",
+		"linkText": "Learn more about our story",
+		"features": {
+			"it": {
+				"title": "Modern IT Service",
+				"desc": "End-to-end encrypted digital core for seamless transactions."
+			},
+			"people": {
+				"title": "Expert People",
+				"desc": "Certified financial advisors with local community knowledge."
+			},
+			"support": {
+				"title": "Global Support",
+				"desc": "24/7 centralized helpline for all your banking needs."
+			},
+			"trust": {
+				"title": "Trust Secured",
+				"desc": "Rigorous compliance and global data security standards."
+			}
+		}
+	},
+	"loan-products": {
+		"badge": "Tailored Solutions",
+		"title": "Loan Products for Every Need",
+		"description": "Competitive rates, flexible tenure, and minimal documentation across our entire range of credit facilities.",
+		"applyBtn": "Apply Now",
+		"items": {
+			"home": {
+				"title": "Home Loan",
+				"desc": "Build your dream home with our affordable housing finance options starting from 8.5% interest."
+			},
+			"agri": {
+				"title": "Agricultural Loan",
+				"desc": "Seasonal credit for farmers to purchase seeds, equipment, and modern technology."
+			},
+			"vehicle": {
+				"title": "Vehicle Loan",
+				"desc": "From tractors to family cars, get on the road faster with our quick approval process."
+			},
+			"personal": {
+				"title": "Personal Loan",
+				"desc": "Unsecured credit for emergency needs, weddings, or personal milestones."
+			},
+			"business": {
+				"title": "Business Loan",
+				"desc": "Fuel your enterprise with MSME credit designed for growth and sustainability."
+			},
+			"animal": {
+				"title": "Animal Husbandry",
+				"desc": "Supporting dairy and poultry farmers with specialized livestock financing."
+			}
+		}
+	},
+	"Invest": {
+		"title": "Investment Opportunities that grow",
+		"withYou": "with you.",
+		"description": "Our fixed-income products offer industry-leading interest rates with the security of a regulated institution. Start small, think big.",
+		"fd_title": "9.5% Fixed Deposits",
+		"fd_desc": "Highest yield for senior citizens and long-term members.",
+		"pigmy_title": "Daily Pigmy Gold",
+		"pigmy_desc": "Micro-savings collected at your doorstep every single day.",
+		"stat_trust": "Years of Trust",
+		"stat_members": "Active Members",
+		"stat_branches": "Service Branches Across Region"
+	},
+	"NotFound": {
+		"searching": "Searching...",
+		"title_main": "Even the best paths have a",
+		"detour": "detour.",
+		"desc": "It seems the financial route you are looking for is currently unavailable.",
+		"desc_help": "Let us help you get back on track.",
+		"btn_home": "Back to Home",
+		"btn_support": "Contact Support",
+		"search_placeholder": "Search for loans, gold rates, or branches...",
+		"badge": "Quick Destinations",
+		"card1": "Apply for Loan",
+		"card2": "Investment Plans",
+		"card3": "About Us"
 	}
 }
