@@ -240,17 +240,44 @@
 		"stat_branches": "Service Branches Across Region"
 	},
 	"NotFound": {
-		"searching": "Searching...",
 		"title_main": "Even the best paths have a",
 		"detour": "detour.",
-		"desc": "It seems the financial route you are looking for is currently unavailable.",
-		"desc_help": "Let us help you get back on track.",
+		"desc": "It seems the financial route you are looking for is currently unavailable. Let us help you get back on track.",
 		"btn_home": "Back to Home",
 		"btn_support": "Contact Support",
 		"search_placeholder": "Search for loans, gold rates, or branches...",
-		"badge": "Quick Destinations",
+		"quick_links_label": "Quick Destinations",
 		"card1": "Apply for Loan",
 		"card2": "Investment Plans",
 		"card3": "About Us"
+	},
+	"contact": {
+		"badge": "Available 24/7 for you",
+		"titleMain": "Connect with",
+		"titleHighlight": "Us.",
+		"description": "Whether you have questions about loans, savings, or technical support, our specialized team is here to ensure your financial journey is seamless.",
+		"cards": {
+			"call": "Call Support",
+			"callDesc": "Talk to our experts for immediate assistance.",
+			"email": "Email Inquiries",
+			"emailDesc": "For detailed queries or documentation support.",
+			"whatsapp": "WhatsApp Us",
+			"whatsappDesc": "Instant messaging for quick updates."
+		},
+		"locator": {
+			"badge": "Our Network",
+			"title": "Branch Locator",
+			"desc": "Visit our branches for personalized financial consultation.",
+			"getDirections": "Get Directions"
+		},
+		"form": {
+			"title": "Send us a Message",
+			"desc": "Fill out the form below and we will contact you within 24 hours.",
+			"name": "Full Name",
+			"phone": "Phone Number",
+			"type": "Inquiry Type",
+			"message": "Your Message",
+			"submit": "Submit Inquiry"
+		}
 	}
 }

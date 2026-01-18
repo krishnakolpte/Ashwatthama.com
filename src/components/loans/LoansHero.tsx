@@ -50,6 +50,7 @@ export default function LoansHero() {
 						height={600}
 						className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
 						priority
+						style={{ width: "100%", height: "auto" }} // ಇದು ಹೈಟ್ ಮತ್ತು ವಿಡ್ತ್ ಅನುಪಾತವನ್ನು ಕಾಪಾಡುತ್ತದೆ
 					/>
 
 					{/* Floating Card 1: KYC */}
