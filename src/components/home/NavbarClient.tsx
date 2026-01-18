@@ -39,6 +39,10 @@ export default function NavbarClient({
 						{locale === "en" ? "ಕನ್ನಡ" : "English"}
 					</span>
 				</button>
+				<button className="h-11 px-6 bg-primary text-white text-sm font-bold rounded-xl hover:opacity-[0.8] hover:cursor-pointer transition-all shadow-lg shadow-slate-200 flex items-center gap-2 active:scale-95">
+					<User size={16} />
+					{translations.login}
+				</button>
 			</div>
 
 			{/* Mobile Toggle */}
