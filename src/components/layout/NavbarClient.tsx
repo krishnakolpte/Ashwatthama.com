@@ -81,6 +81,7 @@ export default function NavbarClient({ t, locale }: NavProps) {
 						<nav className="hidden lg:flex items-center gap-8">
 							<Link
 								href="/"
+								onClick={() => setActiveMenu("")}
 								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
 							>
 								{t.links.home || "Home"}
@@ -217,12 +218,14 @@ export default function NavbarClient({ t, locale }: NavProps) {
 
 							<Link
 								href="/impact"
+								onClick={() => setActiveMenu("")}
 								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
 							>
 								{t.links.impact}
 							</Link>
 							<Link
 								href="/contact"
+								onClick={() => setActiveMenu("")}
 								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
 							>
 								{t.links.contact}
