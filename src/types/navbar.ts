@@ -1,12 +1,23 @@
 export type SupportedLocale = "en" | "kn";
 
-export interface NavbarProps {
-	locale: SupportedLocale;
-}
-
-export interface NavbarTranslations {
-	loans: string;
-	impact: string;
-	contact: string;
-	login: string;
+export interface NavProps {
+	t: {
+		brand: string;
+		tagline: string;
+		links: {
+			home: string;
+			loans: string;
+			investments: string;
+			impact: string;
+			contact: string;
+		};
+		sections: {
+			personal: string;
+			businessAgri: string;
+			fixedIncome: string;
+		};
+		items: Record<string, string>;
+		actions: { lang: string; portal: string };
+	};
+	locale: string;
 }

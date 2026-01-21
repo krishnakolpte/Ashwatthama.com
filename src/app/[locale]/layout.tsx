@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Anek_Kannada } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import Navbar from "@/components/home/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import "../globals.css";
 import { SupportedLocale } from "@/types/navbar";
-import Footer from "@/components/home/Footer";
+import Footer from "@/components/layout/Footer";
 
 const plusJakarta = Plus_Jakarta_Sans({
 	subsets: ["latin"],
@@ -60,6 +60,7 @@ export default async function LocaleLayout({
                 `}
 			>
 				<NextIntlClientProvider messages={messages} locale={locale}>
+					{/* <Navbar locale={locale as SupportedLocale} /> */}
 					<Navbar locale={locale as SupportedLocale} />
 					<main id="main-content">{children}</main>
 					<Footer />
