@@ -14,7 +14,7 @@ export default function LoanProducts() {
 	];
 
 	return (
-		<section className="py-24 bg-brand-white">
+		<section id="all" className="py-24 bg-brand-white">
 			<div className="max-w-7xl mx-auto px-6 lg:px-10">
 				{/* Header */}
 				<div className="text-center mb-16">
@@ -31,11 +31,12 @@ export default function LoanProducts() {
 
 				{/* Product Grid */}
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{products.map((item) => {
+					{products.map((item, index) => {
 						const Icon = item.icon;
 						return (
 							<div
 								key={item.key}
+								id={`loan-${index}`}
 								className="group bg-white p-10 rounded-[2.5rem] flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 border border-transparent hover:border-primary/10"
 							>
 								<div className="size-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">

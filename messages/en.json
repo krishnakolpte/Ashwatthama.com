@@ -1,19 +1,35 @@
 {
 	"Navbar": {
-		"loans": "Loans",
-		"investments": "Investments",
-		"impact": "Impact",
-		"contact": "Contact",
-		"login": "Member Portal",
-		"home_loans": "Home Loans",
-		"vehicle_loans": "Vehicle Loans",
-		"education_loans": "Education Loans",
-		"msme": "MSME Credit",
-		"agri": "Agricultural Finance",
-		"animal": "Animal Husbandry",
-		"fd": "Fixed Deposits",
-		"rd": "Recurring Deposits",
-		"pigmy": "Pigmy Savings"
+		"brand": "Ashwatthama",
+		"tagline": "Global Financial Portal",
+		"links": {
+			"home": "Home",
+			"loans": "Loans",
+			"investments": "Investments",
+			"impact": "Impact",
+			"contact": "Contact"
+		},
+		"sections": {
+			"personal": "Personal Banking",
+			"businessAgri": "Business & Agri",
+			"fixedIncome": "Fixed Income"
+		},
+		"items": {
+			"all": "All Loans",
+			"home": "Home Loans",
+			"vehicle": "Vehicle Loans",
+			"edu": "Education Loans",
+			"msme": "MSME Credit",
+			"agri": "Agricultural Finance",
+			"animal": "Animal Husbandry",
+			"fd": "Fixed Deposits",
+			"rd": "Recurring Deposits",
+			"pigmy": "Pigmy Savings"
+		},
+		"actions": {
+			"lang": "EN / ಕನ್ನಡ",
+			"portal": "Member Portal"
+		}
 	},
 	"Header": {
 		"tagline": "Global Financial Portal",
