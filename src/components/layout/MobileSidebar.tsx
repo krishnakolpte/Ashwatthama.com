@@ -72,6 +72,13 @@ export default function MobileSidebar({
 						>
 							{t.links.home}
 						</Link>
+						<Link
+							href="/about-us"
+							onClick={onClose}
+							className="block py-3 text-lg font-bold text-slate-700 border-b border-slate-100"
+						>
+							{t.links.about}
+						</Link>
 						{/* LOANS ACCORDION */}
 						<div className="border-b border-slate-100 pb-2">
 							<button
@@ -220,14 +227,14 @@ export default function MobileSidebar({
 						</div>
 
 						<Link
-							href="#"
+							href="/careers"
 							onClick={onClose}
 							className="block py-3 text-lg font-bold text-slate-700 border-b border-slate-100"
 						>
-							{t.links.impact}
+							{t.links.careers}
 						</Link>
 						<Link
-							href="#"
+							href="/contact"
 							onClick={onClose}
 							className="block py-3 text-lg font-bold text-slate-700 border-b border-slate-100"
 						>
