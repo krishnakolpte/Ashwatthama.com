@@ -6,8 +6,9 @@
 			"home": "Home",
 			"loans": "Loans",
 			"investments": "Investments",
-			"impact": "Impact",
-			"contact": "Contact"
+			"about": "About Us",
+			"contact": "Contact",
+			"careers": "Careers"
 		},
 		"sections": {
 			"personal": "Personal Banking",
@@ -295,5 +296,151 @@
 			"message": "Your Message",
 			"submit": "Submit Inquiry"
 		}
+	},
+	"aboutHero": {
+		"badge": "Our Legacy, Your Prosperity",
+		"titlePart1": "Rooted in",
+		"titleAccent1": "Heritage",
+		"titlePart2": "Driven by",
+		"titleAccent2": "Trust.",
+		"description": "For five years, Ashwatthama has been more than a financial institution. We are a partner in rural growth, bridging the gap between local wisdom and global standards.",
+		"socialProof": "Joined by 100,000+ happy members",
+		"trustBadgeTitle": "Trust Badge",
+		"trustBadgeText": "RBI Registered Partner",
+		"scrollLabel": "Explore Our Story"
+	},
+	"missionVision": {
+		"missionTitle": "Our Mission",
+		"missionDesc": "To empower 1 million rural households by 2030 through accessible, technology-driven financial products that respect cultural values and foster sustainable growth.",
+		"visionTitle": "Our Vision",
+		"visionDesc": "To be the gold standard for micro-banking in India, where every village has a digital gateway to prosperity and every farmer is a business leader."
+	},
+	"timeline": {
+		"badge": "The Journey So Far",
+		"title": "A Half-Decade of Impact",
+		"years": {
+			"2019": {
+				"label": "The Founding",
+				"description": "Ashwatthama Microfinance was established in Hassan with a team of 5 visionaries and a small office."
+			},
+			"2021": {
+				"label": "Digital Transformation",
+				"description": "Launched our proprietary cloud-based banking core, enabling paperless KYC and instant loan processing."
+			},
+			"2023": {
+				"label": "1 Lakh Members Milestone",
+				"description": "We proudly reached the milestone of serving 100,000 active members across 50+ service branches."
+			},
+			"2024": {
+				"label": "5th Anniversary & Expansion",
+				"description": "Celebrating 5 years of excellence with the launch of new Agricultural and MSME specialized credit lines."
+			}
+		}
+	},
+	"values": {
+		"trustTitle": "Absolute Trust",
+		"trustDesc": "Financial integrity is our bedrock. We maintain total transparency in interest rates and documentation.",
+		"empowerTitle": "Empowerment",
+		"empowerDesc": "We don't just lend money; we provide tools, training, and support to build sustainable livelihoods.",
+		"transparencyTitle": "Transparency",
+		"transparencyDesc": "No hidden charges. No fine print. A clear, honest dialogue with every member we serve."
+	},
+	"leadership": {
+		"badge": "Our Board",
+		"title": "Leadership & Wisdom",
+		"members": {
+			"rajesh": {
+				"name": "Dr. Rajesh Kumar",
+				"role": "Chairman & Founder"
+			},
+			"lakshmi": {
+				"name": "Smt. Lakshmi Devi",
+				"role": "Executive Director"
+			},
+			"arjun": {
+				"name": "Arjun Hegde",
+				"role": "Chief Technology Officer"
+			},
+			"vijay": { "name": "Vijay Prasad", "role": "Head of Operations" }
+		}
+	},
+	"careersHero": {
+		"badge": "Join Our Mission",
+		"headlineMain": "Build Your",
+		"headlineItalic": "Future with",
+		"headlineBrand": "Ashwatthama",
+		"description": "Be part of a team that's redefining rural finance through innovation, integrity, and deep community impact.",
+		"btnOpenings": "View Openings",
+		"btnApply": "General Application",
+		"cultureLabel": "Culture",
+		"cultureValue": "Best Place to Work",
+		"scrollText": "Scroll for Culture"
+	},
+	"culture": {
+		"badge": "Our DNA",
+		"title": "Life at Ashwatthama",
+		"subtitle": "We foster an environment where professional growth meets personal fulfillment.",
+		"growthTitle": "Unlimited Growth",
+		"growthDesc": "Continuous learning pathways, certification support, and internal promotion tracks to fuel your career.",
+		"impactTitle": "Community Impact",
+		"impactDesc": "Directly empower rural entrepreneurs and witness the tangible change your work brings to local lives.",
+		"balanceTitle": "Work-Life Balance",
+		"balanceDesc": "Flexible schedules and wellness initiatives ensuring you have time for what matters most outside of work."
+	},
+	"jobs": {
+		"badge": "Careers",
+		"title": "Open Positions",
+		"filterAll": "All Locations",
+		"tableHead": {
+			"position": "Position",
+			"department": "Department",
+			"location": "Location",
+			"action": "Action"
+		},
+		"applyBtn": "Apply Now",
+		"roles": {
+			"seniorLoan": "Senior Loan Officer",
+			"seniorLoanMeta": "Full-time • 3+ Years Exp.",
+			"branchManager": "Branch Manager",
+			"branchManagerMeta": "Full-time • 5+ Years Exp.",
+			"itSupport": "IT Support Specialist",
+			"itSupportMeta": "Contract • 1-2 Years Exp."
+		},
+		"depts": {
+			"credit": "Credit & Sales",
+			"ops": "Operations",
+			"tech": "Technology"
+		}
+	},
+	"Ctestimonials": {
+		"titleMain": "Voices of",
+		"titleSub": "Our",
+		"titleItalic": "Team.",
+		"quote": "Ashwatthama gave me the platform to not just lead, but to truly transform lives. The culture of trust here is unlike any other financial institution.",
+		"author": "Raghavendra M.",
+		"role": "Regional Manager, 4 Years",
+		"videoBadge": "Video Testimonial",
+		"videoTitle": "Our Journey of 5 Years"
+	},
+	"apply": {
+		"badge": "Can't find a role?",
+		"title": "Submit Your CV for Future Roles",
+		"description": "We are always looking for passionate talent to join our mission. Drop your details and we'll contact you when a suitable position opens up.",
+		"labels": {
+			"name": "Full Name",
+			"email": "Email Address",
+			"phone": "Phone Number",
+			"dept": "Desired Department",
+			"resume": "Upload Resume (PDF)"
+		},
+		"placeholders": {
+			"name": "E.g. Ramesh Kumar",
+			"email": "name@email.com",
+			"phone": "+91 98765 43210",
+			"select": "Select Department",
+			"upload": "Click to upload or drag and drop",
+			"maxSize": "Max Size: 5MB"
+		},
+		"submit": "Submit Application"
 	}
 }

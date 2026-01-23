@@ -8,7 +8,8 @@ export interface NavProps {
 			home: string;
 			loans: string;
 			investments: string;
-			impact: string;
+			about: string;
+			careers: string;
 			contact: string;
 		};
 		sections: {

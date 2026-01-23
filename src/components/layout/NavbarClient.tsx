@@ -87,6 +87,14 @@ export default function NavbarClient({ t, locale }: NavProps) {
 								{t.links.home || "Home"}
 							</Link>
 
+							<Link
+								href="/about-us"
+								onClick={() => setActiveMenu("")}
+								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
+							>
+								{t.links.about}
+							</Link>
+
 							{/* Loans Mega Menu */}
 							<div className="static">
 								<button
@@ -217,11 +225,11 @@ export default function NavbarClient({ t, locale }: NavProps) {
 							</div>
 
 							<Link
-								href="/impact"
+								href="/careers"
 								onClick={() => setActiveMenu("")}
 								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
 							>
-								{t.links.impact}
+								{t.links.careers}
 							</Link>
 							<Link
 								href="/contact"

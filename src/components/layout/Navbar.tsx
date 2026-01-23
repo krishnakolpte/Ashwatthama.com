@@ -11,8 +11,9 @@ export default function Navbar({ locale }: { locale: string }) {
 			home: t("links.home"),
 			loans: t("links.loans"),
 			investments: t("links.investments"),
-			impact: t("links.impact"),
+			about: t("links.about"),
 			contact: t("links.contact"),
+			careers: t("links.careers"),
 		},
 		sections: {
 			personal: t("sections.personal"),
