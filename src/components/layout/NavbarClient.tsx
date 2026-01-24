@@ -15,7 +15,9 @@ export default function NavbarClient({ t, locale }: NavProps) {
 	const router = useRouter();
 	const pathname = usePathname();
 
-	// Close menu if clicking outside the navbar
+	// Helper to check if a link is active
+	const isActive = (path: string) => pathname === path;
+
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
@@ -35,54 +37,58 @@ export default function NavbarClient({ t, locale }: NavProps) {
 	};
 
 	const handleMenuToggle = (menuName: string) => {
-		// Toggle the menu: if same clicked, close it; if different, switch to it.
 		setActiveMenu(activeMenu === menuName ? "" : menuName);
 	};
 
 	const handleLinkClick = () => {
-		// Instantly close the mega menu when a sub-link is selected
 		setActiveMenu("");
 	};
+
+	// Style helper for nav links
+	const linkStyle = (path: string) => `
+        text-sm font-bold transition-colors 
+        ${isActive(path) ? "text-primary" : "text-slate-600 hover:text-primary"}
+    `;
 
 	return (
 		<>
 			<header
 				ref={navRef}
-				className="sticky top-0 z-100 w-full bg-white/95 backdrop-blur-md border-b border-slate-100"
+				className="sticky top-0 z-[100] w-full bg-white/95 backdrop-blur-md border-b border-slate-100"
 			>
-				<div className="max-w-7xl mx-auto px-6 lg:px-10 py-4 flex items-center justify-between">
-					<div className="flex items-center gap-12">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
+					<div className="flex items-center gap-6 xl:gap-12">
 						{/* Logo */}
 						<Link
 							href="/"
-							className="flex items-center gap-2 group outline-none rounded-lg"
+							className="flex items-center gap-2 group outline-none rounded-lg shrink-0"
 						>
-							<div className="relative h-10 w-20 cursor-pointer">
+							<div className="relative h-10 w-16 lg:w-20 cursor-pointer">
 								<Image
 									alt="Ashwatthama Microfinance Logo"
 									src="/logo.png"
 									fill
 									className="object-contain transition-transform duration-300 group-hover:scale-105"
-									sizes="80px"
+									sizes="(max-width: 1024px) 64px, 80px"
 									priority
 								/>
 							</div>
-							<div className="w-full">
-								<h2 className="text-primary text-xl font-extrabold leading-tight tracking-tight">
+							<div className="hidden sm:block">
+								<h2 className="text-primary text-lg lg:text-xl font-extrabold leading-tight tracking-tight">
 									{t.brand}
 								</h2>
-								<p className="text-secondary text-[11px] font-black uppercase tracking-[0.2em] leading-none">
+								<p className="text-secondary text-[9px] lg:text-[11px] font-black uppercase tracking-[0.2em] leading-none">
 									{t.tagline}
 								</p>
 							</div>
 						</Link>
 
-						{/* Desktop Nav */}
-						<nav className="hidden lg:flex items-center gap-8">
+						{/* Desktop Nav - Responsive for lg devices */}
+						<nav className="hidden lg:flex items-center gap-6 xl:gap-8">
 							<Link
 								href="/"
 								onClick={() => setActiveMenu("")}
-								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
+								className={linkStyle("/")}
 							>
 								{t.links.home || "Home"}
 							</Link>
@@ -90,7 +96,7 @@ export default function NavbarClient({ t, locale }: NavProps) {
 							<Link
 								href="/about-us"
 								onClick={() => setActiveMenu("")}
-								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
+								className={linkStyle("/about-us")}
 							>
 								{t.links.about}
 							</Link>
@@ -99,7 +105,8 @@ export default function NavbarClient({ t, locale }: NavProps) {
 							<div className="static">
 								<button
 									onClick={() => handleMenuToggle("loans")}
-									className={`flex items-center gap-1 text-sm font-bold py-5 transition-colors cursor-pointer outline-none ${activeMenu === "loans" ? "text-primary" : "text-slate-600 hover:text-primary"}`}
+									className={`flex items-center gap-1 text-sm font-bold py-5 transition-colors cursor-pointer outline-none 
+                                        ${activeMenu === "loans" || pathname.startsWith("/loans") ? "text-primary" : "text-slate-600 hover:text-primary"}`}
 								>
 									<span>{t.links.loans}</span>
 									<ChevronDown
@@ -113,14 +120,10 @@ export default function NavbarClient({ t, locale }: NavProps) {
 									className={`
                                     absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-2xl 
                                     transition-all duration-300 z-50
-                                    ${
-										activeMenu === "loans"
-											? "opacity-100 visible translate-y-0"
-											: "opacity-0 invisible -translate-y-2 pointer-events-none"
-									}
+                                    ${activeMenu === "loans" ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2 pointer-events-none"}
                                 `}
 								>
-									<div className="max-w-7xl mx-auto grid grid-cols-4 gap-12 p-12">
+									<div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 p-8 lg:p-12">
 										<div className="space-y-4">
 											<h4 className="text-[11px] font-black uppercase text-slate-400 tracking-widest border-b border-slate-50 pb-2">
 												{t.sections.personal}
@@ -152,10 +155,10 @@ export default function NavbarClient({ t, locale }: NavProps) {
 											</h4>
 											<ul className="space-y-3">
 												{["msme", "agri", "animal"].map(
-													(item) => (
+													(item, index) => (
 														<li key={item}>
 															<Link
-																href={`/loans/#${item}`}
+																href={`/loans/#loan-${index + 4}`}
 																onClick={
 																	handleLinkClick
 																}
@@ -178,7 +181,8 @@ export default function NavbarClient({ t, locale }: NavProps) {
 									onClick={() =>
 										handleMenuToggle("investments")
 									}
-									className={`flex items-center gap-1 text-sm font-bold py-5 transition-colors cursor-pointer outline-none ${activeMenu === "investments" ? "text-primary" : "text-slate-600 hover:text-primary"}`}
+									className={`flex items-center gap-1 text-sm font-bold py-5 transition-colors cursor-pointer outline-none 
+                                        ${activeMenu === "investments" || pathname.startsWith("/investments") ? "text-primary" : "text-slate-600 hover:text-primary"}`}
 								>
 									{t.links.investments}
 									<ChevronDown
@@ -190,14 +194,10 @@ export default function NavbarClient({ t, locale }: NavProps) {
 									className={`
                                     absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-2xl 
                                     transition-all duration-300 z-50
-                                    ${
-										activeMenu === "investments"
-											? "opacity-100 visible translate-y-0"
-											: "opacity-0 invisible -translate-y-2 pointer-events-none"
-									}
+                                    ${activeMenu === "investments" ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2 pointer-events-none"}
                                 `}
 								>
-									<div className="max-w-7xl mx-auto grid grid-cols-4 gap-12 p-12">
+									<div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-12 p-8 lg:p-12">
 										<div className="space-y-4">
 											<h4 className="text-[11px] font-black uppercase text-slate-400 tracking-widest border-b border-slate-50 pb-2">
 												{t.sections.fixedIncome}
@@ -207,7 +207,7 @@ export default function NavbarClient({ t, locale }: NavProps) {
 													(item) => (
 														<li key={item}>
 															<Link
-																href={`/investments/${item}`}
+																href={`/loans`}
 																onClick={
 																	handleLinkClick
 																}
@@ -227,14 +227,14 @@ export default function NavbarClient({ t, locale }: NavProps) {
 							<Link
 								href="/careers"
 								onClick={() => setActiveMenu("")}
-								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
+								className={linkStyle("/careers")}
 							>
 								{t.links.careers}
 							</Link>
 							<Link
 								href="/contact"
 								onClick={() => setActiveMenu("")}
-								className="text-sm font-bold text-slate-600 hover:text-primary transition-colors"
+								className={linkStyle("/contact")}
 							>
 								{t.links.contact}
 							</Link>
@@ -242,15 +242,20 @@ export default function NavbarClient({ t, locale }: NavProps) {
 					</div>
 
 					{/* Actions */}
-					<div className="flex items-center gap-3 lg:gap-6">
+					<div className="flex items-center gap-2 lg:gap-4 xl:gap-6">
 						<button
 							onClick={toggleLang}
-							className="flex items-center gap-2 text-sm font-bold text-slate-700 bg-emerald-50 px-4 py-2 rounded-xl hover:bg-emerald-100 transition-all active:scale-95 cursor-pointer"
+							className="flex items-center gap-2 text-xs lg:text-sm font-bold text-slate-700 bg-emerald-50 px-3 lg:px-4 py-2 rounded-xl hover:bg-emerald-100 transition-all active:scale-95 cursor-pointer whitespace-nowrap"
 						>
 							<Globe size={18} className="text-emerald-600" />
-							{t.actions.lang}
+							<span className="hidden sm:inline">
+								{t.actions.lang}
+							</span>
+							<span className="sm:hidden">
+								{locale === "en" ? "ಕನ್ನಡ" : "EN"}
+							</span>
 						</button>
-						<button className="hidden md:block h-11 px-6 bg-primary text-white text-sm font-bold rounded-xl hover:bg-red-800 transition-all shadow-lg shadow-red-900/20 active:scale-95 cursor-pointer">
+						<button className="hidden md:block h-10 lg:h-11 px-4 lg:px-6 bg-primary text-white text-xs lg:text-sm font-bold rounded-xl hover:bg-red-800 transition-all shadow-lg shadow-red-900/20 active:scale-95 cursor-pointer whitespace-nowrap">
 							{t.actions.portal}
 						</button>
 						<button

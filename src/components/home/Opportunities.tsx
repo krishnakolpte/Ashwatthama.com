@@ -1,8 +1,9 @@
-import { getTranslations } from "next-intl/server";
-import { Percent, Megaphone, Tally5 } from "lucide-react";
+import { getTranslations, getLocale } from "next-intl/server";
+import { Percent, Megaphone, Tally5, ArrowRight } from "lucide-react";
 
 export default async function Opportunities() {
 	const t = await getTranslations("Opportunities");
+	const locale = await getLocale();
 
 	const cards = [
 		{
@@ -12,7 +13,7 @@ export default async function Opportunities() {
 			icon: Percent,
 			colorClass: "hover:bg-primary",
 			iconClass: "text-primary",
-			shadowClass: "hover:shadow-primary/20",
+			shadowClass: "hover:shadow-primary/30",
 		},
 		{
 			title: t("card2_title"),
@@ -21,7 +22,7 @@ export default async function Opportunities() {
 			icon: Megaphone,
 			colorClass: "hover:bg-secondary",
 			iconClass: "text-secondary",
-			shadowClass: "hover:shadow-secondary/20",
+			shadowClass: "hover:shadow-secondary/30",
 		},
 		{
 			title: t("card3_title"),
@@ -30,57 +31,82 @@ export default async function Opportunities() {
 			icon: Tally5,
 			colorClass: "hover:bg-brand-black",
 			iconClass: "text-brand-black",
-			shadowClass: "hover:shadow-black/20",
+			shadowClass: "hover:shadow-black/30",
 		},
 	];
 
 	return (
-		<section className="py-16 md:py-24 bg-white relative overflow-hidden">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-				{/* Header: Centered on mobile, Left-aligned on desktop */}
-				<div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-12 text-center md:text-left">
-					<div className="mb-6 md:mb-0">
-						<span className="text-primary font-bold tracking-widest uppercase text-[10px] sm:text-xs block mb-3">
+		<section className="py-20 md:py-32 bg-brand-white relative overflow-hidden">
+			{/* Background Accent */}
+			<div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 translate-x-1/2 pointer-events-none" />
+
+			<div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+				{/* Header Section */}
+				<div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-16 text-center md:text-left">
+					<div className="max-w-2xl">
+						<span
+							className={`text-primary font-black tracking-widest uppercase text-[10px] sm:text-xs block mb-4 ${locale === "kn" ? "font-kannada" : ""}`}
+						>
 							{t("badge")}
 						</span>
-						<h2 className="text-3xl sm:text-4xl font-black text-brand-black tracking-tight font-kannada">
+						<h2
+							className={`text-3xl sm:text-5xl font-black text-brand-black tracking-tighter leading-[1.1] ${locale === "kn" ? "font-kannada" : ""}`}
+						>
 							{t("title")}
 						</h2>
 					</div>
-					{/* Decorative lines: Hidden on mobile to save space */}
-					<div className="hidden md:flex gap-2 mb-2">
-						<div className="h-1 w-12 bg-primary rounded-full" />
-						<div className="h-1 w-6 bg-slate-100 rounded-full" />
+
+					{/* Visual Progress/Decorative Element */}
+					<div className="hidden md:flex items-center gap-3 mb-2">
+						<div className="h-1.5 w-16 bg-primary rounded-full" />
+						<div className="h-1.5 w-8 bg-slate-200 rounded-full" />
+						<div className="h-1.5 w-4 bg-slate-100 rounded-full" />
 					</div>
 				</div>
 
-				{/* Grid: 1 column on mobile, 2 on tablet, 3 on desktop */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+				{/* Cards Grid */}
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 					{cards.map((card, index) => (
 						<div
 							key={index}
-							className={`group relative flex flex-col overflow-hidden rounded-4xl md:rounded-[2.5rem] bg-slate-50 p-8 md:p-10 transition-all ${card.colorClass} hover:shadow-2xl ${card.shadowClass}`}
+							className={`group relative flex flex-col overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] bg-white p-8 md:p-12 transition-all duration-500 border border-slate-100 ${card.colorClass} hover:shadow-2xl ${card.shadowClass} hover:-translate-y-2`}
 						>
+							{/* Decorative Background Circle on Hover */}
+							<div className="absolute -top-12 -right-12 size-32 bg-white/10 rounded-full scale-0 group-hover:scale-100 transition-transform duration-700" />
+
 							<div
-								className={`mb-6 md:mb-10 ${card.iconClass} group-hover:text-white transition-colors`}
+								className={`mb-8 md:mb-12 ${card.iconClass} group-hover:text-white transition-colors duration-300 p-4 bg-slate-50 rounded-2xl w-fit group-hover:bg-white/20`}
 							>
-								{/* Adjusted icon size for mobile responsiveness */}
 								<card.icon
 									className="size-10 md:size-12"
-									strokeWidth={2.5}
+									strokeWidth={2}
 								/>
 							</div>
 
-							<h3 className="text-xl md:text-2xl font-black mb-3 group-hover:text-white transition-colors font-kannada">
+							<h3
+								className={`text-2xl md:text-3xl font-black mb-4 group-hover:text-white transition-colors duration-300 tracking-tight ${locale === "kn" ? "font-kannada" : ""}`}
+							>
 								{card.title}
 							</h3>
 
-							<p className="text-sm md:text-base text-slate-500 group-hover:text-white/80 transition-colors mb-8 leading-relaxed font-kannada grow">
+							<p
+								className={`text-sm md:text-lg text-slate-500 group-hover:text-white/80 transition-colors duration-300 mb-10 leading-relaxed grow ${locale === "kn" ? "font-kannada" : ""}`}
+							>
 								{card.desc}
 							</p>
 
-							<button className="w-full py-3.5 md:py-4 bg-white text-brand-black font-bold rounded-xl md:rounded-2xl shadow-sm border border-slate-100 group-hover:border-transparent cursor-pointer active:scale-95 transition-all font-kannada text-sm md:text-base">
-								{card.btn}
+							<button className="group/btn w-full py-4 md:py-5 bg-white text-brand-black font-black rounded-2xl shadow-sm border border-slate-100 group-hover:border-transparent group-hover:bg-white transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 cursor-pointer">
+								<span
+									className={
+										locale === "kn" ? "font-kannada" : ""
+									}
+								>
+									{card.btn}
+								</span>
+								<ArrowRight
+									size={18}
+									className="group-hover/btn:translate-x-1 transition-transform"
+								/>
 							</button>
 						</div>
 					))}
