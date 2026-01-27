@@ -1,16 +1,13 @@
 "use client"; // Required for the play button functionality
 import { useState } from "react";
 import Image from "next/image";
-import { Quote, Play, User, Sparkles, X } from "lucide-react";
+import { Quote, User, Sparkles, X } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function Testimonials() {
 	const t = useTranslations("Ctestimonials");
 	const locale = useLocale();
 	const [isPlaying, setIsPlaying] = useState(false);
-
-	// Replace with your actual YouTube ID or Video URL
-	const videoId = "dQw4w9WgXcQ";
 
 	return (
 		<section
@@ -73,52 +70,14 @@ export default function Testimonials() {
 
 					{/* Right Side: Responsive Video Player */}
 					<div className="order-1 lg:order-2 group relative">
-						<div className="relative aspect-[4/3] sm:aspect-video lg:aspect-[4/5] bg-black rounded-[2.5rem] md:rounded-[4rem] border border-white/10 overflow-hidden shadow-2xl">
-							{!isPlaying ? (
-								<>
-									<Image
-										alt="Staff story thumbnail"
-										fill
-										className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
-										src="/images/video-thumb.jpg"
-									/>
-									<div className="absolute inset-0 flex items-center justify-center z-20">
-										<button
-											onClick={() => setIsPlaying(true)}
-											className="relative size-20 md:size-28 bg-white rounded-full flex items-center justify-center text-emerald-900 transition-all hover:scale-110 hover:bg-emerald-400 hover:text-white"
-										>
-											<Play
-												className="ml-1.5 fill-current"
-												size={32}
-											/>
-										</button>
-									</div>
-									<div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-10 pointer-events-none" />
-									<div className="absolute bottom-8 left-8 right-8 z-20 pointer-events-none">
-										<p
-											className={`font-black text-xl md:text-2xl text-white ${locale === "kn" ? "font-kannada" : ""}`}
-										>
-											{t("videoTitle")}
-										</p>
-									</div>
-								</>
-							) : (
-								<div className="relative w-full h-full animate-in fade-in duration-500">
-									<iframe
-										className="w-full h-full"
-										src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-										title="Video Player"
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-										allowFullScreen
-									></iframe>
-									<button
-										onClick={() => setIsPlaying(false)}
-										className="absolute top-4 right-4 z-30 p-2 bg-black/50 rounded-full text-white hover:bg-emerald-500 transition-colors"
-									>
-										<X size={20} />
-									</button>
-								</div>
-							)}
+						<div className="relative z-10 overflow-hidden rounded-[3.5rem] shadow-2xl border-[12px] border-white bg-slate-100 aspect-[4/5] transform transition-all duration-700 group-hover:scale-[1.02]">
+							<Image
+								src="/careers.jpg"
+								alt="Our professional staff"
+								fill
+								className="object-cover transition-transform duration-1000 group-hover:scale-110"
+								priority
+							/>
 						</div>
 					</div>
 				</div>
