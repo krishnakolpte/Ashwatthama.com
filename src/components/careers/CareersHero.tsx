@@ -85,7 +85,7 @@ export default async function CareersHero() {
 
 					<div className="relative z-10 overflow-hidden rounded-[3.5rem] shadow-2xl border-[12px] border-white bg-slate-100 aspect-[4/5] transform transition-all duration-700 group-hover:scale-[1.02]">
 						<Image
-							src="/images/careers/hero-staff.jpg"
+							src="/careers.jpg"
 							alt="Our professional staff"
 							fill
 							className="object-cover transition-transform duration-1000 group-hover:scale-110"

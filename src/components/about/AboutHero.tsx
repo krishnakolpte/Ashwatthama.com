@@ -65,18 +65,6 @@ export default async function AboutHero() {
 					</p>
 
 					<div className="flex flex-wrap items-center gap-6">
-						<div className="flex -space-x-4">
-							{[1, 2, 3, 4].map((i) => (
-								<div
-									key={i}
-									className="size-14 rounded-2xl border-4 border-white bg-slate-200 overflow-hidden shadow-lg transform transition hover:-translate-y-2 hover:z-30 cursor-pointer"
-								>
-									<div
-										className={`w-full h-full bg-gradient-to-br from-slate-200 to-slate-400`}
-									/>
-								</div>
-							))}
-						</div>
 						<div className="flex flex-col">
 							<div className="flex gap-1 text-amber-400 mb-1">
 								{[...Array(5)].map((_, i) => (
@@ -104,7 +92,7 @@ export default async function AboutHero() {
 
 					<div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)] border-[12px] border-white transform transition-all duration-700 group-hover:scale-[1.02]">
 						<Image
-							src="/herobg.png"
+							src="/about.jpg"
 							alt="Local Community"
 							width={800}
 							height={650}

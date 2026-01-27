@@ -1,42 +1,36 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import {
-	Landmark,
-	Send,
-	Share2,
-	Globe,
-	MapPin,
-	Phone,
-	Mail,
-} from "lucide-react";
+import { Send, Share2, Globe, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
 	const t = useTranslations("Footer");
 
 	return (
-		<footer className="bg-[#021512] text-white pt-24 pb-12">
+		<footer className="bg-[#021512] text-white pt-16 md:pt-24 pb-12">
 			<div className="max-w-7xl mx-auto px-6 lg:px-10">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+				{/* Main Grid: 1 col on mobile, 2 on tablet, 12-col layout on desktop */}
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-16 md:mb-20">
 					{/* Brand Column */}
-					<div className="lg:col-span-4">
+					<div className="lg:col-span-4 space-y-6">
 						<Link
 							href="/"
-							className="flex items-center gap-0.5 group outline-none rounded-lg mb-3"
+							className="flex items-center gap-1 group outline-none w-fit"
 						>
-							<div className="relative h-10 w-20 group cursor-pointer">
+							<div className="relative h-10 w-16 sm:w-20">
 								<Image
 									alt="Ashwatthama Microfinance Logo"
 									src="/logo.png"
 									fill
-									// 'contain' ensures the logo isn't cropped or stretched
 									className="object-contain transition-transform duration-300 group-hover:scale-105"
-									sizes="(max-width: 80px) 80px, 80px"
+									sizes="80px"
 									priority
 								/>
 							</div>
-							<div className="w-full">
-								<h2 className="text-brand-white text-xl font-extrabold leading-tight tracking-tight">
+							<div>
+								<h2 className="text-white text-xl font-extrabold leading-tight tracking-tight">
 									Ashwatthama
 								</h2>
 								<p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] leading-none">
@@ -44,7 +38,8 @@ export default function Footer() {
 								</p>
 							</div>
 						</Link>
-						<p className="text-white/50 leading-relaxed font-medium mb-8 max-w-sm">
+
+						<p className="text-white/50 leading-relaxed font-medium max-w-sm text-sm sm:text-base">
 							{t("description")}
 						</p>
 
@@ -53,15 +48,19 @@ export default function Footer() {
 								<p className="text-[10px] font-black text-white/30 uppercase tracking-[0.2em] mb-4">
 									{t("newsletter_label")}
 								</p>
-								<form className="flex gap-2">
+								<form
+									className="flex gap-2 max-w-md"
+									onSubmit={(e) => e.preventDefault()}
+								>
 									<input
 										className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 w-full"
 										placeholder={t(
-											"newsletter_placeholder"
+											"newsletter_placeholder",
 										)}
 										type="email"
+										required
 									/>
-									<button className="bg-primary hover:bg-red-900 px-6 py-3 rounded-xl transition-all active:scale-95 group">
+									<button className="bg-primary hover:bg-red-900 px-5 py-3 rounded-xl transition-all active:scale-95 group shrink-0">
 										<Send
 											size={20}
 											className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
@@ -72,105 +71,71 @@ export default function Footer() {
 							<div className="flex gap-4">
 								<Link
 									href="#"
-									className="size-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+									className="size-10 sm:size-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary transition-colors"
 								>
-									<Share2 size={20} />
+									<Share2 size={18} />
 								</Link>
 								<Link
 									href="#"
-									className="size-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+									className="size-10 sm:size-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary transition-colors"
 								>
-									<Globe size={20} />
+									<Globe size={18} />
 								</Link>
 							</div>
 						</div>
 					</div>
 
-					{/* Links Column */}
+					{/* Quick Links Column */}
 					<div className="lg:col-span-2">
-						<h4 className="font-black text-[10px] uppercase tracking-[0.3em] mb-10 text-white/30">
+						<h4 className="font-black text-[10px] uppercase tracking-[0.3em] mb-6 md:mb-10 text-white/30">
 							{t("links_title")}
 						</h4>
 						<ul className="space-y-4 text-white/60 font-bold text-sm">
-							<li>
-								<Link
-									href="#"
-									className="hover:text-primary transition-colors"
-								>
-									Interest Rates
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="hover:text-primary transition-colors"
-								>
-									Member Guidelines
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="hover:text-primary transition-colors"
-								>
-									KYC Documentation
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="hover:text-primary transition-colors"
-								>
-									Privacy Policy
-								</Link>
-							</li>
+							{[
+								"Interest Rates",
+								"Member Guidelines",
+								"KYC Documentation",
+								"Privacy Policy",
+							].map((link) => (
+								<li key={link}>
+									<Link
+										href="/"
+										className="hover:text-primary transition-colors block"
+									>
+										{link}
+									</Link>
+								</li>
+							))}
 						</ul>
 					</div>
 
 					{/* Products Column */}
 					<div className="lg:col-span-2">
-						<h4 className="font-black text-[10px] uppercase tracking-[0.3em] mb-10 text-white/30">
+						<h4 className="font-black text-[10px] uppercase tracking-[0.3em] mb-6 md:mb-10 text-white/30">
 							{t("products_title")}
 						</h4>
 						<ul className="space-y-4 text-white/60 font-bold text-sm">
-							<li>
-								<Link
-									href="#"
-									className="hover:text-primary transition-colors"
-								>
-									Personal Loans
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="hover:text-primary transition-colors"
-								>
-									Gold Loan Mela
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="hover:text-primary transition-colors"
-								>
-									Pigmy Passbook
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#"
-									className="hover:text-primary transition-colors"
-								>
-									MSME Credit
-								</Link>
-							</li>
+							{[
+								"Personal Loans",
+								"Gold Loan Mela",
+								"Pigmy Passbook",
+								"MSME Credit",
+							].map((item) => (
+								<li key={item}>
+									<Link
+										href="/loans"
+										className="hover:text-primary transition-colors block"
+									>
+										{item}
+									</Link>
+								</li>
+							))}
 						</ul>
 					</div>
 
 					{/* Contact Column */}
 					<div className="lg:col-span-4">
-						<h4 className="font-black text-[10px] uppercase tracking-[0.3em] mb-10 text-white/30">
+						<h4 className="font-black text-[10px] uppercase tracking-[0.3em] mb-6 md:mb-10 text-white/30">
 							{t("contact_title")}
 						</h4>
 						<div className="space-y-6">
@@ -183,7 +148,7 @@ export default function Footer() {
 									<p className="font-bold text-sm mb-1">
 										{t("address_label")}
 									</p>
-									<p className="text-sm text-white/40 leading-relaxed">
+									<p className="text-sm text-white/40 leading-relaxed max-w-xs">
 										{t("address_text")}
 									</p>
 								</div>
@@ -196,7 +161,7 @@ export default function Footer() {
 							</div>
 							<div className="flex items-center gap-4">
 								<Mail className="text-primary" size={20} />
-								<p className="font-bold text-sm">
+								<p className="font-bold text-sm break-all">
 									support@ashwatthama.finance
 								</p>
 							</div>
@@ -213,30 +178,25 @@ export default function Footer() {
 				</div>
 
 				{/* Bottom Bar */}
-				<div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+				<div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
 					<p className="text-white/30 text-[10px] font-bold uppercase tracking-widest text-center md:text-left">
 						{t("rights")}
 					</p>
-					<div className="flex items-center gap-8 grayscale invert opacity-20">
-						{/* Replace src with your local assets */}
-						<div className="h-8 w-20 relative">
+					<div className="flex items-center gap-6 sm:gap-8 grayscale invert opacity-20">
+						<div className="h-6 w-16 sm:h-8 sm:w-20 relative">
 							<Image
 								src="/u2.webp"
-								alt="Digital India"
+								alt="Gov"
 								fill
-								sizes="(max-width: 768px) 80px, 100px"
 								className="object-contain"
-								priority={false}
 							/>
 						</div>
-						<div className="h-8 w-20 relative">
+						<div className="h-6 w-16 sm:h-8 sm:w-20 relative">
 							<Image
 								src="/u1.webp"
 								alt="Digital India"
 								fill
-								sizes="(max-width: 768px) 80px, 100px"
 								className="object-contain"
-								priority={false}
 							/>
 						</div>
 					</div>
